@@ -1,13 +1,13 @@
 const { query } = require('express');
 const mysql = require('mysql2');
-
+require('dotenv').config();
 
 class SongConnection {
     constructor(){
         this.pool = mysql.createPool({
-            host:'localhost',
-            user:'root',
-            password:'Devinda0@',
+            host: process.env.DB_HOST,
+            user: process.env.DB_USER,
+            password: process.env.DB_PASS,
             database:'songs'
         });
     }

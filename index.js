@@ -5,6 +5,7 @@ const mysql = require('mysql2');
 const songsRoute = require('./Routes/songs');
 const imgRoute = require('./Routes/img');
 const audioRoute = require('./Routes/audio');
+const loginRoute = require('./Routes/user')
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(cors());
 app.use('/api/songs/', songsRoute);
 app.use('/api/img/', imgRoute);
 app.use('/api/audio/', audioRoute);
+app.use('/api/user/', loginRoute);
 
 let count = 0 ;
 

@@ -62,7 +62,7 @@ router.get('/test/:id', async (req, res) => {
 
         streamResponse.data.pipe(res);
     } catch (e) {
-        console.error(`Cannot load the audio from ${audioUrl}`, e);
+        console.error(`Cannot load the audio from ${audioUrl}`);
         res.status(500).send('Cannot load the audio');
     }
 });
